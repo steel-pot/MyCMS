@@ -1,6 +1,9 @@
+admin模块的前端来自ThinkCMF的admin_simpleboot3，这协议怎么搞，弄个好看的UI太难了
+项目地址：https://github.com/thinkcmf/thinkcmf
+------------------------------------------------------
 主要代码基于SpeedPHP
 项目地址：https://github.com/SpeedPHP/speed
-----------------------------------------------------
+
 SpeedPHP框架是遵循BSD许可证发布的开源软件
 
 BSD许可证参考 http://www.opensource.org/licenses/bsd-license.php（英文）

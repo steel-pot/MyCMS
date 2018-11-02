@@ -15,6 +15,7 @@ if(empty($debug))
 } 
 require('Helper.php');
 spl_autoload_register('_loader');
+if(file_exists(MAIN_DIR.DS.'App'.DS.'Config.php'))Fw\Model::$DB_CONFIG=require(MAIN_DIR.DS.'App'.DS.'Config.php');
 if(file_exists(MAIN_DIR.DS.'App'.DS.'Router.php'))$rewrite=require(MAIN_DIR.DS.'App'.DS.'Router.php');
 if(file_exists(MAIN_DIR.DS.'App'.DS.'Db.php'))Fw\Model::$DB_CONFIG=require(MAIN_DIR.DS.'App'.DS.'Db.php');
 _router();

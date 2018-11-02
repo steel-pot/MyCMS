@@ -1,0 +1,40 @@
+<div class="wrap js-check-wrap">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#">角色管理</a></li>
+		<li><a href="<{url c='admin/Power' a='GroupAdd'}>">添加角色</a></li>
+	</ul>
+	<form action="<{url c='admin/Power' a='Group'}>" method="post" class="margin-top-20">
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th width="40">ID</th>
+					<th align="left">角色名称</th>
+					<th align="left">角色描述</th>
+					<th width="60" align="left">状态</th>
+					<th width="160">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+                <{foreach $list as $row}>
+                <tr>
+					<td><{$row.id}></td>
+					<td><{$row.name}></td>
+					<td><{$row.remark}></td>
+					<td><{$status[$row['status']]}></td>
+					<td>
+                            <{if $row.id!=1}>
+    							<a href="/admin/rbac/authorize/id/2.html">权限设置</a>							
+    							<a href="/admin/rbac/roleedit/id/2.html">编辑</a>
+    							<a class="js-ajax-delete" href="/admin/rbac/roledelete/id/2.html">删除</a>
+                            <{else}>
+                                <font color="#cccccc">权限设置</font>
+                                <font color="#cccccc">编辑</font> 
+                                <font color="#cccccc">删除</font>    
+                            <{/if}>
+					</td>
+				</tr>
+                <{/foreach}>                
+			</tbody>
+		</table>
+	</form>
+</div>

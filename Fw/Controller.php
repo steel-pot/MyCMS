@@ -34,4 +34,28 @@ class Controller{
 			echo $this->_v->render($tpl_name);
 		}
 	}
+	//内容 
+	protected function error($msg="操作成功",$url="",$wait=3,$code=0)
+	{
+		$this->_backData($msg,$url,'',$wait,$code,$GLOBALS['error_tpl']);
+	}
+	protected function success($msg="操作成功",$url="",$data='',$wait=3,$code=1)
+	{
+		 $this->_backData($msg,$url,$data,$wait,$code,$GLOBALS['success_tpl']);
+	}
+	private function _backData($msg,$url,$data,$wait,$code,$tpl)
+	{
+		if(request()->isAjax())
+		{
+			echo json_encode(['msg'=>$msg,'url'=>$url,'data'=>$data,'wait'=>$wait,'code'=>$code]);
+		}else{
+			$this->msg=$msg;
+			$this->url=$url;
+			$this->data=$data;
+			$this->wait=$wait;
+			$this->code=$code;
+			$this->display($tpl);
+		}
+		exit;
+	}
 }

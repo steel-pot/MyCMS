@@ -1,5 +1,6 @@
 <?php
 namespace Fw;
+use \PDO;
 class Model{
 	public static $DB_CONFIG;
 	public $page;

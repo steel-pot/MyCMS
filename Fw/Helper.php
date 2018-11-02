@@ -1,4 +1,22 @@
 <?php
+function err($msg)
+{
+	global $debug;
+	if($debug)
+	{
+		echo $msg;		
+	}else{
+		error_log($msg);
+	}
+	if (ob_get_contents()) ob_end_clean();
+	exit;
+}
+
+function request()
+{
+	return Fw\Request::getSington();
+}
+
 function _router()
 {
 	global $rewrite;
@@ -46,7 +64,7 @@ function _run()
 		header('HTTP/1.0 404 Not Found');
 		exit;
 	}
-	$Controller="{$m}\\Controller\\{$c}";
+	$Controller="{$m}\\Controller\\{$c}Controller";
 	$Controller=new $Controller();
 	$Controller->$a();	
 	//自动执行
