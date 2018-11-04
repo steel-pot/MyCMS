@@ -99,17 +99,21 @@ function url($c = 'main', $a = 'index', $param = array()){
 		list($m, $c) = explode('/', $c);
 		$route = "$m/$c/$a";
 		$url = $_SERVER["SCRIPT_NAME"]."?m=$m&c=$c&a=$a$params";
+
 	}else{
 		$m = '';
 		$route = "$c/$a";
 		$url = $_SERVER["SCRIPT_NAME"]."?c=$c&a=$a$params";
 	}
+	
 
 	if(!empty($rewrite)){
 		if(!isset($GLOBALS['url_array_instances'][$url])){
 			foreach($rewrite as $rule => $mapper){
+
 				$mapper = '/^'.str_ireplace(array('/', '<a>', '<c>', '<m>'),
 					array('\/', '(?P<a>\w+)', '(?P<c>\w+)', '(?P<m>\w+)'), $mapper).'/i';
+ 
 				if(preg_match($mapper, $route, $matchs)){
 					$GLOBALS['url_array_instances'][$url] = str_ireplace(array('<a>', '<c>', '<m>'), array($a, $c, $m), $rule);
 					if(!empty($param)){
@@ -129,7 +133,7 @@ function url($c = 'main', $a = 'index', $param = array()){
 					if(count($param) == preg_match_all('/<\w+>/is', $rule, $_match)){
 						return $GLOBALS['url_array_instances'][$url];
 					}
-					//break;
+					break;
 				}
 			}
 			return isset($GLOBALS['url_array_instances'][$url]) ? $GLOBALS['url_array_instances'][$url] : $url;

@@ -9,7 +9,7 @@ class MainController extends BaseController
 
 	public function Main()
 	{
-		echo "main";
+		 
 	}
 
 }

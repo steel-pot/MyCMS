@@ -104,9 +104,9 @@ class Model{
 	public function query($sql, $params = array()){return $this->execute($sql, $params, true);}
 	public function execute($sql, $params = array(), $readonly = false){
 		$this->sql[] = $sql;
-		if($readonly && !empty($GLOBALS['mysql']['MYSQL_SLAVE'])){
-			$slave_key = array_rand($GLOBALS['mysql']['MYSQL_SLAVE']);
-			$sth = $this->dbInstance($GLOBALS['mysql']['MYSQL_SLAVE'][$slave_key], 'slave_'.$slave_key)->prepare($sql);
+		if($readonly && !empty(self::$DB_CONFIG['MYSQL_SLAVE'])){
+			$slave_key = array_rand(self::$DB_CONFIG['MYSQL_SLAVE']);
+			$sth = $this->dbInstance(self::$DB_CONFIG['MYSQL_SLAVE'][$slave_key], 'slave_'.$slave_key)->prepare($sql);
 		}else{
 			$sth = $this->dbInstance(self::$DB_CONFIG, 'master')->prepare($sql);
 		}

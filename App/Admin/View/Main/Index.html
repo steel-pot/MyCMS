@@ -1,515 +1,71 @@
-
 <!DOCTYPE html>
-<html lang="zh_CN" style="overflow: hidden;">
+<html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!-- Set render engine for 360 browser -->
-    <meta name="renderer" content="webkit">
-    <meta charset="utf-8">
-    <title>MyCMF 后台管理中心</title>
-    <meta name="description" content="This is page-header (.page-header &gt; h1)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- HTML5 shim for IE8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-    <link href="<{#I}>/admin/assets/themes/flatadmin/bootstrap.min.css" rel="stylesheet">
-    <link href="<{#I}>/admin/assets/simpleboot3/css/simplebootadmin.css" rel="stylesheet">
-    <link href="<{#I}>/static/font-awesome/css/font-awesome.min.css?page=index" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="<{#I}>/admin/assets/themes/flatadmin/simplebootadminindex.min.css">
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-        /*-----------------导航hack--------------------*/
-        .nav-list > li.open {
-            position: relative;
-        }
-
-        .nav-list > li.open .back {
-            display: none;
-        }
-
-        .nav-list > li.open .normal {
-            display: inline-block !important;
-        }
-
-        .nav-list > li.open a {
-            padding-left: 7px;
-        }
-
-        .nav-list > li .submenu > li > a {
-            background: #fff;
-        }
-
-        .nav-list > li .submenu > li a > [class*="fa-"]:first-child {
-            left: 20px;
-        }
-
-        .nav-list > li ul.submenu ul.submenu > li a > [class*="fa-"]:first-child {
-            left: 30px;
-        }
-        /*----------------导航hack--------------------*/
-    </style>
-
-    <script>
-        ver="20181101";
-        //全局变量
-        var GV = {
-            HOST: "<{request()->host()}>",
-            ROOT: "/",
-            WEB_ROOT: "/",
-            JS_ROOT: "i/static/js/"
-        };
-    </script>
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>MyCMS</title>
+  <link rel="stylesheet" href="<{#I}>/Plugins/layui/css/layui.css">
+  <link rel="stylesheet" href="<{#I}>/Plugins/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="<{#I}>/Admin/Css/Admin.css">
 </head>
-
-<body style="min-width:900px;overflow: hidden;">
-<div id="loading"><i class="loadingicon"></i><span>正在加载...</span></div>
-<div id="right-tools-wrapper">
-    <!--<span id="right_tools_clearcache" title="清除缓存" onclick="javascript:openapp('/admin/setting/clearcache.html','right_tool_clearcache','清除缓存');"><i class="fa fa-trash-o right_tool_icon"></i></span>-->
-    <!--<span id="refresh-wrapper" title="刷新当前页面"><i-->
-            <!--class="fa fa-refresh right_tool_icon"></i></span>-->
-</div>
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="/admin/index/index.html" class="navbar-brand" style="min-width: 200px;text-align: center;">MyCMF</a>
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-        <div class="navbar-collapse collapse" id="navbar-main">
-            <div class="pull-left" style="position: relative;">
-                <a id="task-pre" class="task-changebt"><i class="fa fa-chevron-left"></i></a>
-                <div id="task-content">
-                    <ul class="nav navbar-nav cmf-component-tab" id="task-content-inner">
-                        <li class="cmf-component-tabitem noclose" app-id="0" app-url="/admin/main/index.html"
-                            app-name="首页">
-                            <a class="cmf-tabs-item-text">首页</a>
-                        </li>
-                    </ul>
-                    <div style="clear:both;"></div>
-                </div>
-                <a id="task-next" class="task-changebt"><i class="fa fa-chevron-right"></i></a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right simplewind-nav">
-                <li class="light-blue" style="border-left:none;display: none;" id="close-all-tabs-btn">
-                    <a id="close-wrapper" href="javascript:void(0);" title="关闭顶部菜单" style="color:#fff;font-size: 16px">
-                        <i class="fa fa-times right_tool_icon"></i>
-                    </a>
-                </li>
-                <li class="light-blue" style="border-left:none;">
-                    <a id="refresh-wrapper" href="javacript:void(0);" title="刷新当前页面" style="color:#fff;font-size: 16px">
-                        <i class="fa fa-refresh right_tool_icon"></i>
-                    </a>
-                </li>
-                <li class="light-blue dropdown" style="border-left:none;">
-                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                                    <img class="nav-user-photo" width="30" height="30"
-                                 src="<{#I}>/admin/assets/images/logo-18.png" alt="admin">
-                                                <span class="user-info">
-								欢迎, admin							</span>
-                        <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-                                                    <li>
-                                <a href="javascript:openapp('/admin/setting/site.html','index_site','网站信息');"><i
-                                        class="fa fa-cog"></i> 网站信息</a></li>
-                                                    <li>
-                                <a href="javascript:openapp('/admin/user/userinfo.html','index_userinfo','修改信息');"><i
-                                        class="fa fa-user"></i> 修改信息</a></li>
-                                                    <li>
-                                <a href="javascript:openapp('/admin/setting/password.html','index_password','修改密码');"><i
-                                        class="fa fa-lock"></i> 修改密码</a></li>
-                                                <li><a href="/admin/public/logout.html"><i class="fa fa-sign-out"></i> 退出</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">MyCMS</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+     
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          贤心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">退出</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-this"><a href="<{url c='Admin/Main' a='Main'}>" target="main"><i class="fa fa-home"></i><span>管理首页</span></a></li>
+        <li class="layui-nav-item">
+          <a  href="javascript:;" ><i class="fa fa-shield"></i><span>安全管理</span></a>
+          <dl class="layui-nav-child">
+            <dd><a href="<{url c='Admin/Main' a='Main'}>" target="main">角色列表</a></dd>
+            <dd><a href="javascript:;">管理员列表</a></dd>
+          </dl>
+        </li> 
+      </ul>
     </div>
+  </div>
+  
+  <div class="layui-body" style="overflow: hidden;padding:20px;background-color: #f2f2f2;">
+    <!-- 内容主体区域 -->
+      <iframe src="<{url c='Admin/Main' a='Main'}>" width="100%" height=100%  frameborder="no" id="main" name="main"></iframe>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © layui.com - 底部固定区域
+  </div>
 </div>
-
-<div class="main-container container-fluid">
-
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-            <a class="btn btn-sm btn-warning" href="/"
-               title="网站首页"
-               target="_blank"
-               data-toggle="tooltip">
-                <i class="fa fa-home"></i>
-            </a>
-            <!--
-                            <a class="btn btn-sm btn-success" href="javascript:openapp('/portal/admin_category/index.html','index_termlist','文章分类管理');" title="文章分类管理">
-                    <i class="fa fa-th"></i>
-                </a>
-                            <a class="btn btn-sm btn-info" href="javascript:openapp('/portal/admin_article/index.html','index_postlist','文章管理');" title="文章管理">
-                    <i class="fa fa-pencil"></i>
-                </a>
-                        -->
-
-                            <a class="btn btn-sm btn-info"
-                   href="javascript:openapp('/user/admin_asset/index.html','userAdminAssetindex','资源管理',true);"
-                   title="资源管理"
-                   data-toggle="tooltip">
-                    <i class="fa fa-file"></i>
-                </a>
-                            <a class="btn btn-sm btn-danger"
-                   href="javascript:openapp('/admin/setting/clearcache.html','index_clearcache','清除缓存',true);"
-                   title="清除缓存"
-                   data-toggle="tooltip">
-                    <i class="fa fa-trash-o"></i>
-                </a>
-                            <a class="btn btn-sm btn-danger"
-                   href="javascript:openapp('/admin/recycle_bin/index.html','index_recycle','回收站',true);"
-                   title="回收站"
-                   data-toggle="tooltip">
-                    <i class="fa fa-recycle"></i>
-                </a>
-                <a class="btn btn-sm btn-default" href="javascript:openapp('<{url c='Admin/Menu' a='Index'}>','index_menu','后台菜单',true);" title="" data-toggle="tooltip" data-original-title="后台菜单">
-                    <i class="fa fa-list"></i>
-                </a>
-            
-        </div>
-        <div id="nav-wrapper">
-            <ul class="nav nav-list">
-                        <li>
-                        <a href="#" class="dropdown-toggle">
-                <i class="fa fa-cogs normal"></i>
-                <span class="menu-text normal"> 设置 </span>
-                <b class="arrow fa fa-angle-right normal"></b>
-                <i class="fa fa-reply back"></i>
-                <span class="menu-text back">返回</span>
-
-            </a>
-
-            <ul class="submenu">
-                    <li>
-                <a href="javascript:openapp('/admin/setting/site.html','71admin','网站信息',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									网站信息								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/mailer/index.html','15admin','邮箱配置',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									邮箱配置								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/theme/index.html','95admin','模板管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									模板管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/nav/index.html','29admin','导航管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									导航管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/slide/index.html','78admin','幻灯片管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									幻灯片管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/link/index.html','7admin','友情链接',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									友情链接								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/route/index.html','61admin','URL美化',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									URL美化								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/setting/upload.html','75admin','上传设置',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									上传设置								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/storage/index.html','93admin','文件存储',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									文件存储								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/user/admin_user_action/index.html','159user','用户操作管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									用户操作管理								</span>
-        </a>
-        
-    </li>
-
-                </ul>
-            
-        </li>
-
-                <li>
-                        <a href="#" class="dropdown-toggle">
-                <i class="fa fa-group normal"></i>
-                <span class="menu-text normal"> 用户管理 </span>
-                <b class="arrow fa fa-angle-right normal"></b>
-                <i class="fa fa-reply back"></i>
-                <span class="menu-text back">返回</span>
-
-            </a>
-
-            <ul class="submenu">
-                    <li>
-                <a href="#" class="dropdown-toggle">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									管理组								</span>
-            <b class="arrow fa fa-angle-right"></b>
-        </a>
-        <ul class="submenu">
-                <li>
-        
-        <a href="javascript:openapp('<{url c='Admin/Power' a='Group'}>','50admin','角色管理',true);">
-            &nbsp;<i class="fa fa-angle-double-right"></i>
-            <span class="menu-text">
-								角色管理							</span>
-        </a>
-    </li>
-
-        <li>
-        
-        <a href="javascript:openapp('/admin/user/index.html','111admin','管理员',true);">
-            &nbsp;<i class="fa fa-angle-double-right"></i>
-            <span class="menu-text">
-								管理员							</span>
-        </a>
-    </li>
-
-            </ul>
-        
-    </li>
-
-        <li>
-                <a href="#" class="dropdown-toggle">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									用户组								</span>
-            <b class="arrow fa fa-angle-right"></b>
-        </a>
-        <ul class="submenu">
-                <li>
-        
-        <a href="javascript:openapp('/user/admin_index/index.html','154user','本站用户',true);">
-            &nbsp;<i class="fa fa-angle-double-right"></i>
-            <span class="menu-text">
-								本站用户							</span>
-        </a>
-    </li>
-
-        <li>
-        
-        <a href="javascript:openapp('/user/admin_oauth/index.html','157user','第三方用户',true);">
-            &nbsp;<i class="fa fa-angle-double-right"></i>
-            <span class="menu-text">
-								第三方用户							</span>
-        </a>
-    </li>
-
-            </ul>
-        
-    </li>
-
-                </ul>
-            
-        </li>
-
-                <li>
-                        <a href="#" class="dropdown-toggle">
-                <i class="fa fa-cloud normal"></i>
-                <span class="menu-text normal"> 插件中心 </span>
-                <b class="arrow fa fa-angle-right normal"></b>
-                <i class="fa fa-reply back"></i>
-                <span class="menu-text back">返回</span>
-
-            </a>
-
-            <ul class="submenu">
-                    <li>
-                <a href="javascript:openapp('/admin/hook/index.html','2admin','钩子管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									钩子管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/admin/plugin/index.html','42admin','插件列表',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									插件列表								</span>
-        </a>
-        
-    </li>
-
-                </ul>
-            
-        </li>
-
-                <li>
-                        <a href="#" class="dropdown-toggle">
-                <i class="fa fa-th normal"></i>
-                <span class="menu-text normal"> 门户管理 </span>
-                <b class="arrow fa fa-angle-right normal"></b>
-                <i class="fa fa-reply back"></i>
-                <span class="menu-text back">返回</span>
-
-            </a>
-
-            <ul class="submenu">
-                    <li>
-                <a href="javascript:openapp('/portal/admin_article/index.html','122portal','文章管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									文章管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/portal/admin_category/index.html','132portal','分类管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									分类管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/portal/admin_page/index.html','140portal','页面管理',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									页面管理								</span>
-        </a>
-        
-    </li>
-
-        <li>
-                <a href="javascript:openapp('/portal/admin_tag/index.html','146portal','文章标签',true);">
-            <i class="fa fa-caret-right"></i>
-            <span class="menu-text">
-									文章标签								</span>
-        </a>
-        
-    </li>
-
-                </ul>
-            
-        </li>
-
-                    </ul>
-        </div>
-
-    </div>
-
-    <div class="main-content">
-        <div class="page-content" id="content">
-            <iframe src="<{url c='Admin/Main' a='Main'}>" style="width:100%;height: 100%;" frameborder="0" id="appiframe-0"
-                    class="appiframe"></iframe>
-        </div>
-    </div>
-</div>
-
-<script src="<{#I}>/admin/assets/js/jquery-1.10.2.min.js"></script>
-<script src="<{#I}>/static/js/wind.js"></script>
-<script src="<{#I}>/admin/assets/js/bootstrap.min.js"></script>
-<script src="<{#I}>/static/js/admin.js"></script>
-<script src="<{#I}>/admin/assets/simpleboot3/js/adminindex.js"></script>
+<script src="<{#I}>/Plugins/jquery/jquery.min.js"></script>
+<script src="<{#I}>/Plugins/layui/layui.js"></script>
+<script src="<{#I}>/Admin/Js/Admin.js"></script> 
 <script>
-    $(function () {
-        $("[data-toggle='tooltip']").tooltip();
-        $("li.dropdown").hover(function () {
-            $(this).addClass("open");           
-        }, function () {
-            $(this).removeClass("open");
-            
-        }); 
-    });
-
-    var ismenumin = $("#sidebar").hasClass("menu-min");
-    $(".nav-list").on("click", function (event) { 
-        var closest_a = $(event.target).closest("a");
-        if (!closest_a || closest_a.length == 0) {
-            return
-        }
-        if (!closest_a.hasClass("dropdown-toggle")) {
-            if (ismenumin && "click" == "tap" && closest_a.get(0).parentNode.parentNode == this) {
-                var closest_a_menu_text = closest_a.find(".menu-text").get(0);
-                if (event.target != closest_a_menu_text && !$.contains(closest_a_menu_text, event.target)) {
-                    return false
-                }
-            }
-            return
-        }
-        var closest_a_next = closest_a.next().get(0);
-        if (!$(closest_a_next).is(":visible")) {
-            var closest_ul = $(closest_a_next.parentNode).closest("ul");
-            if (ismenumin && closest_ul.hasClass("nav-list")) {
-                return
-            }
-            closest_ul.find("> .open > .submenu").each(function () {
-                if (this != closest_a_next && !$(this.parentNode).hasClass("active")) {
-                    $(this).slideUp(150).parent().removeClass("open"); 
-                    $(this).parent().find(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-right");
-                }
-            });
-        }
-        if (ismenumin && $(closest_a_next.parentNode.parentNode).hasClass("nav-list")) {
-            return false;
-        }
-        $(closest_a_next).slideToggle(150).parent().toggleClass("open");
-        $(closest_a_next).parent().find(".fa-angle-right:first").toggleClass("fa-angle-down");
-        return false;
-    });
-
-
-
+  
+$("a[target=main]").click(function (){
+      layer.open({
+        type: 3 
+      }); 
+      return true;
+ });  
 </script>
 </body>
 </html>
