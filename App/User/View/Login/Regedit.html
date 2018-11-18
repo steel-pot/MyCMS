@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>移动统计系统注册</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<{#I}>/sbadmin2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="<{#I}>/sbadmin2/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="<{#I}>/sbadmin2/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<{#I}>/sbadmin2/vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!--layer-->
+	<script src="<{#I}>/plugins/layer/layer.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">移动统计系统注册</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" onsubmit="regedit(); return false;">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="邮箱，影响到找回密码" name="username" type="text"  required="required" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="密码" name="password" type="password"  required="required" value="">
+                                </div>
+								<div class="form-group">
+                                    <input class="form-control" placeholder="再次输入密码" name="repass" type="password"  required="required" value="">
+                                </div>
+								
+								<div class="form-group input-group">
+									<input type="text" name="vercode" required="required" autocomplete="Off"  required="required"  placeholder="验证码" class="form-control"> 
+									<span class="input-group-btn">
+										<img src="<{url c='Common/Code' a='Index' }>" onclick="this.src='<{url c='Common/Code' a='Index' r=''}>'+Math.random();" style="height:34px" id="vcode"> 
+									</span>
+								</div>  
+                                
+								  <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-success btn-block">注册</button>
+								</div>
+								<span class="pull-right">已经有帐号？<a href="<{url c='User/Login' a='Index'}>">点击此处登陆</a></span>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+  
+	
+	<script> 
+		if (self != top) { 
+			window.parent.location.href="<{url c='User/Login' a='Index'}>";
+		}
+		function regedit()
+		{
+			var index=layer.load(1, {
+			  shade: [0.1,'#fff'] //0.1透明度的白色背景
+			});
+			$.post("<{url c='User/Login' a='RegeditIn'}>",$("form").serialize(),function(rs){
+				layer.close(index);
+				if(rs.result!='1')
+				{					
+					$("#vcode").trigger('click');
+					layer.alert(rs.info);
+				}else{
+					location.replace("<{url c='User/Login' a='Index'}>");
+				}				
+			});
+		}
+	</script>
+</body>
+</html>
+	<!--<div class="logo" title="大牛系统定制dn188.cc，QQ：138419管理界面">#大牛dn188.cc技术支持#</div>--> 

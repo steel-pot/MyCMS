@@ -1,0 +1,57 @@
+	<!--datetimepicker-->
+	<link href="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<script src="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<form method="post">
+		<div class="form-inline">
+			<div class="form-group">
+				<label>开始日期</label>
+				<input type="text" class="form-control" name="beginDate"  placeholder="yyyy-MM-dd" value="<{$beginDate}>" autocomplete="Off" readonly="true">
+			</div>
+			<div class="form-group">
+				<label>结束日期</label>
+				<input type="text" class="form-control" name="endDate"  placeholder="yyyy-MM-dd" value="<{$endDate}>" autocomplete="Off" readonly="true">
+			</div>
+			 <button type="submit" class="btn btn-primary">分析</button>
+		</div>
+		</form>
+	</div>
+	<div class="panel-body">
+		<div id="showDiv"></div>
+	</div> 
+</div>
+<link rel="stylesheet" href="<{#I}>/plugins/morris.js/morris.css">
+<script src="<{#I}>/plugins/morris.js/morris.min.js"></script>
+<script src="<{#I}>/plugins/raphael/raphael-min.js"></script>
+<script>
+  $(function(){
+      var month_data = <{json_encode($rows)}>;
+      Morris.Line({
+        element: 'showDiv',
+        data: month_data,
+        xkey: 'day',
+        ykeys: ['ip', 'pv'],
+        labels: ['ip', 'pv'],
+        smooth: false
+      });
+	  	var dateSet={//选择年月日
+　　　　　　format: 'yyyy-mm-dd',
+　　　　　　language: 'zh-CN',
+　　　　　　weekStart: 1,
+　　　　　　todayBtn: 1,//显示‘今日’按钮
+　　　　　　autoclose: 1,
+　　　　　　todayHighlight: 1,
+　　　　　　startView: 2,
+　　　　　　minView: 2,  //Number, String. 默认值：0, 'hour'，日期时间选择器所能够提供的最精确的时间选择视图。
+
+　　　　　　clearBtn:true,//清除按钮
+
+　　　　　　forceParse: 0
+　　　　};	
+	$("[name=beginDate]").datetimepicker(dateSet);		
+	$("[name=endDate]").datetimepicker(dateSet);	
+  });
+</script>

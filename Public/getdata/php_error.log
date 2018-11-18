@@ -1,0 +1,8 @@
+[08-Nov-2018 21:21:50 PRC] PHP Notice:  Array to string conversion in /data/wwwroot/plan/web/Public/getdata/index.php on line 110
+[08-Nov-2018 21:21:50 PRC] PHP Notice:  Array to string conversion in /data/wwwroot/plan/web/Public/getdata/index.php on line 110
+[08-Nov-2018 21:21:50 PRC] PHP Warning:  Missing argument 3 for handleData(), called in /data/wwwroot/plan/web/Public/getdata/index.php on line 110 and defined in /data/wwwroot/plan/web/Public/getdata/index.php on line 27
+[08-Nov-2018 21:21:50 PRC] PHP Warning:  Illegal string offset 'game_type' in /data/wwwroot/plan/web/Public/getdata/index.php on line 35
+[08-Nov-2018 21:21:50 PRC] PHP Warning:  Illegal string offset 'gid' in /data/wwwroot/plan/web/Public/getdata/index.php on line 36
+[08-Nov-2018 21:21:50 PRC] PHP Notice:  Undefined variable: type in /data/wwwroot/plan/web/Public/getdata/index.php on line 38
+[08-Nov-2018 21:21:50 PRC] PHP Notice:  Undefined variable: type in /data/wwwroot/plan/web/Public/getdata/index.php on line 50
+[08-Nov-2018 21:22:24 PRC] PHP Notice:  Undefined variable: newIssueNo in /data/wwwroot/plan/web/Public/getdata/index.php on line 87

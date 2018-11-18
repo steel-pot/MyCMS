@@ -2,21 +2,24 @@
 date_default_timezone_set('PRC');
 define('DS',DIRECTORY_SEPARATOR);
 define('TMP_DIR',MAIN_DIR.DS.'Tmp');
+ini_set('error_log',TMP_DIR.DS.'php_error.log');
 if(empty($debug))
 {
 	error_reporting(0);
 	ini_set('display_errors','Off'); 
-
-	ini_set('error_log',TMP_DIR.DS.'php_error.log');
 	ini_set('log_errors',1);
 }else{
 	error_reporting(E_ALL);
 	ini_set('display_errors','On');	
 } 
+@session_start();
 require('Helper.php');
 spl_autoload_register('_loader');
-if(file_exists(MAIN_DIR.DS.'App'.DS.'Config.php'))Fw\Model::$DB_CONFIG=require(MAIN_DIR.DS.'App'.DS.'Config.php');
+if(file_exists(MAIN_DIR.DS.'App'.DS.'Config.php'))require(MAIN_DIR.DS.'App'.DS.'Config.php');
 if(file_exists(MAIN_DIR.DS.'App'.DS.'Router.php'))$rewrite=require(MAIN_DIR.DS.'App'.DS.'Router.php');
 if(file_exists(MAIN_DIR.DS.'App'.DS.'Db.php'))Fw\Model::$DB_CONFIG=require(MAIN_DIR.DS.'App'.DS.'Db.php');
+if(file_exists(MAIN_DIR.DS.'App'.DS.'Common.php'))require(MAIN_DIR.DS.'App'.DS.'Common.php'); 
 _router();
+if(file_exists(MAIN_DIR.DS.'App'.DS.$m.DS.'Config.php'))require(MAIN_DIR.DS.'App'.DS.$m.DS.'Config.php'); 
+if(file_exists(MAIN_DIR.DS.'App'.DS.$m.DS.'Common.php'))require(MAIN_DIR.DS.'App'.DS.$m.DS.'Common.php'); 
 _run();

@@ -1,0 +1,100 @@
+<style type="text/css">
+	legend {
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<div class="container-fluid">   
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-lg-12">
+				<button type="button" class="btn btn-success" onclick="add()">添加网站</button>
+			</div>	
+		</div>
+		<div class="row">
+			<{if count($rows)>0}>
+			<{foreach $rows as $row}>
+			<div class="col-lg-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 &nbsp;&nbsp;<{$row.name}>&nbsp;&nbsp;
+						 <span>添加时间:&nbsp;&nbsp;<{$row.created}> 
+						 <button type="button" class="btn btn-danger  pull-right" onclick="del('<{$row.token}>')"><i class="fa  fa-trash-o"></i></button> 
+						 <button type="button" class="btn btn-default   pull-right" onclick="edit('<{$row.token}>')"><i class="fa fa-edit"></i></button>
+					</div>
+					<div class="panel-body">  
+						<em><{htmlspecialchars(str_replace(':token',$row['token'],$config['default_js']))}></em> <button   data-clipboard-target="#copyInput" class="btn btn-warning  btn-sm copy"  >复制代码</button>
+					</div>
+					<div class="panel-footer">
+						 请将代码贴到需要统计的网页中
+					</div>
+				</div>
+			</div>
+			<{/foreach}>
+			<{else}>
+			<div class="col-lg-12">
+				<div class="panel panel-default">		 
+					<div class="panel-body">
+						暂无网站
+					</div>
+				</div>
+			</div>
+			<{/if}>
+		</div> 
+</div>
+
+ 
+<input type="text" value="" id="copyInput" style="opacity:0; z-index=-1;" > 
+<script>
+	var add=function(){
+		 layer.prompt({title: '输入域名', formType: 0}, function(domain, index){
+		 		layer.close(index);
+		 		index=layer.load(0);
+		 		$.post("<{url c='User/Domain' a='add'}>",{'domain':domain},function(rs){
+		 			if(rs.result==1)
+		 			{
+		 				location.reload();
+		 			}else{
+		 				layer.close(index);
+		 				layer.alert(rs.info);
+		 			}
+		 		});
+		 });
+	}
+	var edit=function(token){
+		 layer.prompt({title: '输入新域名', formType: 0}, function(domain, index){
+		 		layer.close(index);
+		 		index=layer.load(0);
+		 		$.post("<{url c='User/Domain' a='edit'}>",{'domain':domain,'token':token},function(rs){
+		 			if(rs.result==1)
+		 			{
+		 				location.reload();
+		 			}else{
+		 				layer.close(index);
+		 				layer.alert(rs.info);
+		 			}
+		 		});
+		 });
+	}
+	var del=function(token){
+		layer.confirm('删除之后无法恢复，确认要删除该域名吗？',function(){
+			layer.alert('暂不提供删除功能');
+		});		  
+	}
+	 
+	 var clipboard = new ClipboardJS('.copy');
+	  clipboard.on('success',function(){
+			layer.alert("已经成功将代码复制到剪贴板！");
+	  });
+	  clipboard.on('error',function(){
+			layer.alert("复制失败，请手动复制");
+	  }); 
+	  $(".copy").on('click',function(){
+			$("#copyInput").val($(this).parent().find("em").text());
+	  });
+</script>

@@ -1,0 +1,54 @@
+	<!-- DataTables CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+	<!-- DataTables JavaScript -->
+    <script src="<{#I}>/sbadmin2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<{#I}>/sbadmin2/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<{#I}>/sbadmin2/vendor/datatables-responsive/dataTables.responsive.js"></script> 
+<div class="panel panel-default">
+	<div class="panel-body">
+	
+		<table class="table table-hover table-main" >
+		<thead>
+		  <tr>
+			<th>ID</th>
+			<th>域名</th>
+			<th>昨日访问IP</th>
+			<th>昨日访问PV</th>
+			<th>今日访问IP</th>
+			<th>今日访问PV</th>
+			<th>总访问IP</th>
+			<th>总访问PV</th> 
+		  </tr> 
+		</thead>
+		<tbody>
+		   <{if count($rows)>0}>
+			<{foreach $rows as $row}>
+				<tr>
+			  <td><{$row.id}></td>
+			  <td><{$row.name}></td>
+			  <td><{#$row['lip']?$row['lip']:0}></td>
+			  <td><{#$row['lpv']?$row['lpv']:0}></td>
+			  <td><{#$row['tip']?$row['tip']:0}></td>
+			  <td><{#$row['tpv']?$row['tpv']:0}></td>
+			  <td><{$row.ip}></td>
+			  <td><{$row.pv}></td>
+			  </tr>
+			<{/foreach}>
+		   <{else}>
+		   <tr><td colspan="8" style="text-align: center;">您还没有添加网站</td></tr>
+		   <{/if}>
+		</tbody>
+		</table>
+
+   </div>
+</div>
+<script>
+	 $('.table-main').DataTable({
+            responsive: true, 
+			bLengthChange: false,
+			language:datatablesLanguage,
+        });
+</script>
+	

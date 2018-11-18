@@ -1,0 +1,55 @@
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"> 
+				<div class="layui-tab layui-tab-brief caller-tab" lay-filter="docDemoTabBrief">
+					<ul class="layui-tab-title">
+					  <li  ><a href="<{url c='Admin/Main' a='Plan' gid=$gid type=0}>"> <{$gameType[$gameData['type']]}>大小</a></li>
+					  <li  ><a href="<{url c='Admin/Main' a='Plan' gid=$gid type=1}>"><{$gameType[$gameData['type']]}>单双</a></li>
+					  <li class="layui-this" ><a href="#">编辑<{if $type==0}>大小<{else}>单双<{/if}>计划</a></li>
+					</ul>
+				</div>
+		  </div>
+          <div class="layui-card-body">
+				 <form class="layui-form" method="POST" lay-filter="component-form-group" onsubmit="updateData();return false;">
+					  <div class="layui-form-item">
+						<label class="layui-form-label">计划标题</label>
+						<div class="layui-input-block">
+						  <input type="text" name="title" lay-verify="title" value="<{$row.title}>"  placeholder="请输入标题" class="layui-input">
+						</div>
+					  </div>
+					  <div class="layui-form-item">
+						<label class="layui-form-label">计划期号</label>
+						<div class="layui-input-block">
+						  <input type="text" name="IssueNo" value="<{$row.IssueNo}>"  placeholder="如果不知道，可以不填" autocomplete="off" class="layui-input">
+						</div>
+					  </div>
+					  <div class="layui-form-item">
+						<label class="layui-form-label">投注倍数</label>
+						<div class="layui-input-block">
+						  <input type="text" name="Multiple" value="<{$row.Multiple}>" lay-verify="required" placeholder="最少为1" autocomplete="off" class="layui-input">
+						</div>
+					  </div>
+					  <div class="layui-form-item">
+						<label class="layui-form-label">计划</label>
+						<div class="layui-input-block">
+						  <input type="radio" name="plan" value="0" title="<{$gameType[$gameData['type']]}><{if $type==0}>大<{else}>单<{/if}>" checked=""><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><div><{$gameType[$gameData['type']]}><{if $type==0}>大<{else}>单<{/if}></div></div>
+						  <input type="radio" name="plan" value="1" title="<{$gameType[$gameData['type']]}><{if $type==0}>小<{else}>双<{/if}>"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div><{$gameType[$gameData['type']]}><{if $type==0}>小<{else}>双<{/if}></div></div>
+						</div>
+						 
+					  </div>
+
+					<div class="layui-form-item layui-layout-admin">
+						<div class="layui-input-block">
+						  <button class="layui-btn" type="submit" lay-submit="" lay-filter="component-form-demo1">立即提交</button>						 
+						</div>
+					  </div>
+				</form>  
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <script>var row=<{json_encode($row)}></script>

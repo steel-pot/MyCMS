@@ -2,9 +2,11 @@
 function err($msg)
 {
 	global $debug;
+
 	if($debug)
 	{
-		echo $msg;		
+		echo $msg;	
+		exit;	
 	}else{
 		error_log($msg);
 	}
@@ -16,7 +18,10 @@ function request()
 {
 	return Fw\Request::getSington();
 }
-
+function http()
+{
+	return Fw\Http::getSington();
+}
 function _router()
 {
 	global $rewrite;
@@ -50,15 +55,15 @@ function _router()
 			}
 		}
 	}
-
+	global $m,$c,$a,$moduleList,$defaultModule;
+	$m=isset($_GET['m'])?$_GET['m']:(!$defaultModule?'Home':$defaultModule);
+	$c=isset($_GET['c'])?$_GET['c']:'Main';
+	$a=isset($_GET['a'])?$_GET['a']:'Index';
 }
 
 function _run()
 {
-	global $m,$c,$a,$moduleList;
-	$m=isset($_GET['m'])?$_GET['m']:'Home';
-	$c=isset($_GET['c'])?$_GET['c']:'Main';
-	$a=isset($_GET['a'])?$_GET['a']:'Index';
+	global $m,$c,$a,$moduleList,$defaultModule; 
 	if(!in_array($m, $moduleList))
 	{
 		header('HTTP/1.0 404 Not Found');
@@ -141,4 +146,55 @@ function url($c = 'main', $a = 'index', $param = array()){
 		return $GLOBALS['url_array_instances'][$url];
 	}
 	return $url;
+}
+
+
+
+function deleteDir($dir)
+{
+    if (!$handle = @opendir($dir)) {
+        return false;
+    }
+    while (false !== ($file = readdir($handle))) {
+        if ($file !== "." && $file !== "..") {       //排除当前目录与父级目录
+            $file = $dir . '/' . $file;
+            if (is_dir($file)) {
+                deleteDir($file);
+            } else {
+                @unlink($file);
+            }
+        }
+
+    }
+    @rmdir($dir);
+}
+function page($page=0,$limit=10)
+{
+	$limit=intval($limit);
+	$limit=$limit>0?$limit:10;
+	$page=($page-1)*$limit;
+	return "{$page},{$limit}";
+}
+
+
+/*
+	如果$key为null,则返回对象	
+*/
+function session($key=null,$val=null)
+{
+	if(!empty($key)&&!empty($val))
+	{
+		return Fw\Session::getSington()->write($key,$val);
+	}elseif(!empty($key))
+	{
+		return Fw\Session::getSington()->read($key);
+	}else{
+		return Fw\Session::getSington();
+	}
+}
+
+function jump($url)
+{
+	header('Location:'.$url);
+	exit;
 }

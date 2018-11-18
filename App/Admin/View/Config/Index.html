@@ -1,0 +1,56 @@
+<style type="text/css">
+.layui-form-label{width:100px;}	
+.layui-input-block{margin-left: 130px;}
+</style>
+<form method="POST" > 
+ <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"> <button class="layui-btn" type="submit" lay-submit lay-filter="set_website" onclick="return showload()">确认保存</button></div>
+          <div class="layui-card-body" pad15>
+            
+            <div class="layui-form " wid100 lay-filter="">
+             <div class="layui-form-item">
+                <label class="layui-form-label">管理员帐号</label>
+                <div class="layui-input-block">
+                  <input type="text" name="adminuser" value="<{$config.adminuser}>" class="layui-input">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label">管理员密码</label>
+                <div class="layui-input-block">
+                  <input type="text" name="adminpass" value="" placeholder="不需要修改请留空" class="layui-input">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label">默认JS代码,展示给用户的</label>
+                <div class="layui-input-block">
+                   <textarea name="default_js" placeholder="" class="layui-textarea"><{$config.default_js}></textarea>
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label"> 执行JS代码,实际执行代码</label>
+                <div class="layui-input-block">
+                   <textarea name="run_js" placeholder="" class="layui-textarea"><{$config.run_js}></textarea>
+                </div>
+              </div>  
+            </div>
+            
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<script>
+	var  showload=function(){
+		layer.open({type: 3}); 
+		setTimeout(function(){$("form").submit()},1000);
+		return false;
+	}
+	var uploadUrl="<{url c='Admin/Upload' a='Index'}>";
+</script>

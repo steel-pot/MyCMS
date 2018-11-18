@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>MyCMS</title>
+  <title>大牛定制系统dn188.cc，QQ：138419管理界面</title>
   <link rel="stylesheet" href="<{#I}>/Plugins/layui/css/layui.css">
   <link rel="stylesheet" href="<{#I}>/Plugins/font-awesome/css/font-awesome.min.css">
    <link rel="stylesheet" href="<{#I}>/Admin/Css/Admin.css">
@@ -11,60 +11,68 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">MyCMS</div>
+    <div class="layui-logo"><a href="http://dn188.cc" target="_bank">大牛定制系统</a></div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
      
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          贤心
+          管理员
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="<{url c='Admin/Config' a='Index'}>" target="main">网站配置</a></dd> 
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="">退出</a></li>
+      <li class="layui-nav-item"><a href="<{url c='Admin/Login' a='LogOut'}>">退出</a></li>
     </ul>
   </div>
   
-  <div class="layui-side layui-bg-black">
+  <div class="layui-side layui-bg-black" style="margin-top:48px;">
     <div class="layui-side-scroll">
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-this"><a href="<{url c='Admin/Main' a='Main'}>" target="main"><i class="fa fa-home"></i><span>管理首页</span></a></li>
+        <li class="layui-nav-item layui-this"><a href="<{url c='Admin/Main' a='Main'}>" target="main"><i class="fa fa-home"></i>&nbsp;&nbsp;<span>管理首页</span></a></li>
+        <li class="layui-nav-item "><a href="<{url c='Admin/Config' a='Index'}>" target="main"><i class="fa fa-cog"></i>&nbsp;&nbsp;<span>网站配置</span></a></li>
         <li class="layui-nav-item">
-          <a  href="javascript:;" ><i class="fa fa-shield"></i><span>安全管理</span></a>
+          <a  href="javascript:;" ><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;<span>计划配置</span></a>
           <dl class="layui-nav-child">
-            <dd><a href="<{url c='Admin/Main' a='Main'}>" target="main">角色列表</a></dd>
-            <dd><a href="javascript:;">管理员列表</a></dd>
+            <{foreach $rows as $row}>
+            <dd><a href="<{url c='Admin/Main' a='Plan' gid=$row.gid}>" target="main"><{$row.title}></a></dd> 
+            <{/foreach}>
           </dl>
         </li> 
       </ul>
     </div>
   </div>
   
-  <div class="layui-body" style="overflow: hidden;padding:20px;background-color: #f2f2f2;">
+  <div class="layui-body" style="overflow: hidden;top:0px;padding:20px;padding-top:45px;background-color: #f2f2f2;">
     <!-- 内容主体区域 -->
       <iframe src="<{url c='Admin/Main' a='Main'}>" width="100%" height=100%  frameborder="no" id="main" name="main"></iframe>
   </div>
   
   <div class="layui-footer">
     <!-- 底部固定区域 -->
-    © layui.com - 底部固定区域
+    © 大牛定制系统dn188.cc，QQ：138419管理界面
   </div>
 </div>
 <script src="<{#I}>/Plugins/jquery/jquery.min.js"></script>
 <script src="<{#I}>/Plugins/layui/layui.js"></script>
 <script src="<{#I}>/Admin/Js/Admin.js"></script> 
 <script>
-  
+var iframeLoadId=0;  
 $("a[target=main]").click(function (){
-      layer.open({
+     iframeLoadId= layer.open({
         type: 3 
       }); 
       return true;
+ });
+$("#main").on('load',function(){
+    if(iframeLoadId>0)
+    {
+      layer.close(iframeLoadId);      
+      iframeLoadId=0;
+    }
  });  
 </script>
 </body>

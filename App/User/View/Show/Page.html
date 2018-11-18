@@ -1,0 +1,77 @@
+	<!-- DataTables CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="<{#I}>/sbadmin2/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+	<!-- DataTables JavaScript -->
+    <script src="<{#I}>/sbadmin2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<{#I}>/sbadmin2/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<{#I}>/sbadmin2/vendor/datatables-responsive/dataTables.responsive.js"></script> 
+	
+	<!--datetimepicker-->
+	<link href="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<script src="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="<{#I}>/sbadmin2/vendor/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	
+	
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="form-inline">
+			<form method="post">
+			<div class="form-group">
+				<label>开始日期</label>
+				<input type="text" class="form-control" name="beginDate"  placeholder="yyyy-MM-dd" value="<{$beginDate}>" autocomplete="Off" readonly="true">
+			</div>
+			<div class="form-group">
+				<label>结束日期</label>
+				<input type="text" class="form-control" name="endDate"   placeholder="yyyy-MM-dd" value="<{$endDate}>" autocomplete="Off" readonly="true">
+			</div>
+			 <button class="btn btn-primary">分析</button>
+			 </form>
+		</div>
+	</div>
+	<div class="panel-body">
+		<table class="table table-striped table-bordered table-hover table-main" >
+			<thead>
+			  <tr>
+				<th>网页地址</th>
+				<th>访问次数</th>  
+			  </tr> 
+			</thead>
+			<tbody>
+			   <{if count($rows)>0}>
+				<{foreach $rows as $row}>
+					<tr>
+				  <td><{$row['page_url']}></td>
+				  <td><{#$row['c']?$row['c']:0}></td>
+				  
+				  </tr>
+				<{/foreach}> 
+			   <{/if}>
+			</tbody>
+		</table>
+	</div>  
+</div>
+<script>
+ $('.table-main').DataTable({
+            responsive: true, 
+			bLengthChange: false,
+			language:datatablesLanguage,
+			order:[[1,'desc']]
+        });
+	var dateSet={//选择年月日
+　　　　　　format: 'yyyy-mm-dd',
+　　　　　　language: 'zh-CN',
+　　　　　　weekStart: 1,
+　　　　　　todayBtn: 1,//显示‘今日’按钮
+　　　　　　autoclose: 1,
+　　　　　　todayHighlight: 1,
+　　　　　　startView: 2,
+　　　　　　minView: 2,  //Number, String. 默认值：0, 'hour'，日期时间选择器所能够提供的最精确的时间选择视图。
+
+　　　　　　clearBtn:true,//清除按钮
+
+　　　　　　forceParse: 0
+　　　　};	
+	$("[name=beginDate]").datetimepicker(dateSet);		
+	$("[name=endDate]").datetimepicker(dateSet);		
+</script>

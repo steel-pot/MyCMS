@@ -36,7 +36,7 @@ class Controller{
 	}
 	//内容 
 	protected function error($msg="操作成功",$url="",$wait=3,$code=0)
-	{
+	{ 	 
 		$this->_backData($msg,$url,'',$wait,$code,$GLOBALS['error_tpl']);
 	}
 	protected function success($msg="操作成功",$url="",$data='',$wait=3,$code=1)

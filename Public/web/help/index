@@ -1,0 +1,349 @@
+<!-- htmlcs-disable -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="百度移动统计是一款专业免费的移动应用统计分析工具，支持android，ios平台。" />
+    <meta name="keywords" content="百度移动统计;移动应用统计;移动APP统计;Android统计;iOS统计;iphone统计" />
+    <title>百度统计</title>
+    <!-- htmlcs-disable max-len, no-meta-css, unique-id, label-for-input, lowercase-class-with-hyphen -->
+<!-- htmlcs-disable max-len, no-meta-css, unique-id -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link href="/webrpt/css/white_simple_layout.css?__v=1542181873728" rel="stylesheet" type="text/css">
+    
+    <link href="/webrpt/css/tj_help_center.css?__v=1542181873728" rel="stylesheet" type="text/css">
+
+    <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+  var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+</head>
+<body>
+<div class="homepage-header-wrapper">
+    <div class="logo">
+        <a class="logo-link" href="https://tongji.baidu.com">
+            <img src="/webrpt/images/tj_logo@2x.png?__v=1542181873728" alt="百度统计">
+        </a>
+    </div>
+    <div class="homepage-header-nav">
+        <div class="nav-item">
+            <a href="https://tongji.baidu.com" class="nav-item-label">首页</a>
+        </div>
+        <div class="nav-item">
+            <a href="https://tongji.baidu.com/web/welcome/products" class="nav-item-label">产品介绍</a>
+        </div>
+        <div class="nav-item">
+            <a href="#" class="nav-item-label hp-drop-trigger">产品与服务</a>
+            <div class="sub-nav ease-in-height  hp-drop-content">
+                <ul>
+                    <li><a href="https://tongji.baidu.com">百度统计-网站统计</a></li>
+                    <li><a href="https://mtj.baidu.com">百度统计-移动统计</a></li>
+                    <li><a href="http://retail.baidu.com">零售解决方案</a></li>
+                    <li><a href="http://datamarket.baidu.com">百度数据市场</a></li>
+                    <li><a href="https://tongji.baidu.com/open/">统计开放平台</a></li>
+                    <li><a href="http://tongji.baidu.com/data/">流量研究院</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="https://tongji.baidu.com/web/welcome/cases" class="nav-item-label">成功案例</a>
+        </div>
+        <div class="nav-item">
+            <a href="https://tongji.baidu.com/web/help/index?from=2" class="nav-item-label">帮助中心</a>
+        </div>
+        <div class="nav-item">
+            <a href="/web/welcome/media" class="nav-item-label">媒体中心</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-banner">
+        <img class="header-banner-image" src="/webrpt/images/tj_banner.jpg"/>
+        <div class="page-title">帮助中心</div>
+        <div class="search-container" id="article-search">
+            <input type="text" class="help-center-search-input" value="" placeholder="请简单描述您的问题或问题的关键字，如“代码安装”" />
+            <i class="icon-font search-icon"></i>
+            <form method="post" action="search" style="display:none;">
+                <input id="search-keyword" type="text" name="keyword">
+                <input id="search-offset" type="text" name="offset">
+                <input id="search-page-size" type="text" name="pageSize">
+                <input id="search-content" type="text" name="content">
+                <input id="search-total" type="text" name="total">
+                <input id="search-type" type="text" name="type">
+                <input type="text" name="from" value="2" />
+            </form>
+        </div>
+    </div>
+    <!-- 内容区块开始 -->
+    
+<div class="help-center-underlay">
+    <div class="help-center-content">
+        <div class="help-center-title">
+            <h2>新手入门<a href="/web/help/articleList?type=0&category=13">更多&gt;</a></h2>
+        </div>
+        <div class="introduction-wrapper">
+            <ul class="introduction-ul clearfix">
+                                                <li class="l " data="article-category-276">
+                    <a title="联系我们" class="ellipsis" href="/web/help/article?id=276&type=0">联系我们</a>
+                </li>
+                                <li class="l " data="article-category-90">
+                    <a title="产品概况" class="ellipsis" href="/web/help/article?id=90&type=0">产品概况</a>
+                </li>
+                                <li class="l " data="article-category-170">
+                    <a title="使用入门" class="ellipsis" href="/web/help/article?id=170&type=0">使用入门</a>
+                </li>
+                                <li class="l " data="article-category-172">
+                    <a title="界面导航" class="ellipsis" href="/web/help/article?id=172&type=0">界面导航</a>
+                </li>
+                                <li class="l " data="article-category-253">
+                    <a title="专业术语" class="ellipsis" href="/web/help/article?id=253&type=0">专业术语</a>
+                </li>
+                                <li class="l last" data="article-category-239">
+                    <a title="账户类型" class="ellipsis" href="/web/help/article?id=239&type=0">账户类型</a>
+                </li>
+                            </ul>
+        </div>
+        <div class="help-center-title">
+            <h2>使用指南<a href="/static/tongji/Instruction.pdf" target="_blank">文档下载</a></h2>
+        </div>
+        <div class="operating-guide-wrapper">
+            <ul>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-0">
+                        <a href="/web/help/articleList?type=0&category=16" class="operations-guide-tab">代码安装</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=174&type=0" title="百度统计代码介绍">百度统计代码介绍</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=175&type=0" title="如何获取统计代码">如何获取统计代码</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=176&type=0" title="如何手动安装代码">如何手动安装代码</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=94&type=0" title="如何自动安装代码">如何自动安装代码</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=16&type=0">查看更多（11条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-1">
+                        <a href="/web/help/articleList?type=0&category=17" class="operations-guide-tab">数据报告</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=107&type=0" title="百度统计提供哪些数据报告">百度统计提供哪些数据报告</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=132&type=0" title="如何全方位地解读数据">如何全方位地解读数据</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=134&type=0" title="如何添加常用报告">如何添加常用报告</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=135&type=0" title="为什么有些报告没有权限">为什么有些报告没有权限</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=17&type=0">查看更多（62条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-2">
+                        <a href="/web/help/articleList?type=0&category=18" class="operations-guide-tab">统计设置</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=244&type=0" title="可供设置的功能总览">可供设置的功能总览</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=245&type=0" title="设置更改后的生效时间">设置更改后的生效时间</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=246&type=0" title="通配符与正则表达式">通配符与正则表达式</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=95&type=0" title="什么是转化及统计支持的转化类型">什么是转化及统计支持的转化类型</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=18&type=0">查看更多（35条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-3">
+                        <a href="/web/help/articleList?type=0&category=19" class="operations-guide-tab">账户管理</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=173&type=0" title="百度统计账户类型">百度统计账户类型</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=180&type=0" title="账户、站点、报告间的关系">账户、站点、报告间的关系</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=182&type=0" title="如何创建站点">如何创建站点</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=183&type=0" title="站点的暂停与删除">站点的暂停与删除</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=19&type=0">查看更多（18条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-4">
+                        <a href="/web/help/articleList?type=0&category=20" class="operations-guide-tab">高级功能</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=219&type=0" title="JS-API_如何部署JS-API代码">JS-API_如何部署JS-API代码</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=235&type=0" title="trackPageview说明">trackPageview说明</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=236&type=0" title="trackEvent说明">trackEvent说明</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=256&type=0" title="_setCustomVar说明">_setCustomVar说明</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=20&type=0">查看更多（20条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                                <li class="l">
+                    <div class="operating-guide-li-wrapper operating-guide-li-wrapper-5">
+                        <a href="/web/help/articleList?type=0&category=21" class="operations-guide-tab">疑难问题</a>
+                        <ul>
+                                                                                    <li class="ellipsis">
+                                <a href="/web/help/article?id=197&type=0" title="为什么统计中的转化数据和凤巢后台不一致">为什么统计中的转化数据和凤巢后台不一致</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=196&type=0" title="为什么分报告中不同维度的数据相加会大于网站概况的数据">为什么分报告中不同维度的数据相加会大于网站概况的数据</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=195&type=0" title="为什么点击数量多于PV量">为什么点击数量多于PV量</a>
+                            </li>
+                                                        <li class="ellipsis">
+                                <a href="/web/help/article?id=194&type=0" title="为什么点击数量大于或者小于访客数">为什么点击数量大于或者小于访客数</a>
+                            </li>
+                                                                                    <li class="ellipsis">
+                                <a class="operations-guide-li-more" href="/web/help/questionList?category=21&type=0">查看更多（23条）</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </li>
+                            </ul>
+        </div>
+        <div class="help-center-title tongji-class-title">
+            <h2>统计讲堂<a href="/web/help/articleList?type=0&category=15">更多&gt;</a></h2>
+        </div>
+        <div class="tongji-class-wrapper">
+            <ul class="clearfix">
+                                                <li class="l ellipsis ">
+                    <a href="/web/help/article?id=273&type=0" title="">如何区分百度自然、付费搜索来源</a>
+                    <div class="tongji-class-detail">百度统计与百度搜索引擎无缝打通，不仅能够监控全流量的搜索词信息，并且支持用户在无额外...</div>
+                </li>
+                                <li class="l ellipsis ">
+                    <a href="/web/help/article?id=238&type=0" title="">授权功能——帮您实现多账户整合监控</a>
+                    <div class="tongji-class-detail">您还在为多个推广账户不好统一监控忧心吗？您还在为多人管理同一账户如何确保数据安全而烦...</div>
+                </li>
+                                <li class="l ellipsis last">
+                    <a href="/web/help/article?id=237&type=0" title="">如何进行转化分析，掌握转化效果</a>
+                    <div class="tongji-class-detail">转化是指用户在您网站上完成的某项给您带来收益的活动，如购买、注册、留言咨询等，当用户...</div>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>
+
+    <!-- 内容区块结束 -->
+</div>
+
+    <script src="/webrpt/js/common.js?__v=1542181873728" type="text/javascript"></script>
+    <script src="/webrpt/js/sawse.js?__v=1542181873728" type="text/javascript"></script>
+    <script src="/webrpt/js/mtj.js?__v=1542181873728" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $.holmes = $.holmes || {};
+    $.holmes.config = $.holmes.config || {};
+    $.extend($.holmes.config, {"systemConfig":{"domain":"tongji.baidu.com","webRoot":"\/web","webRootRpt":"\/webrpt","baseUri":"\/web","ajaxUri":"\/web\/ajax\/post","memoUri":"\/web\/common\/memo","now":1542547008000,"hmJsFootCode":"<script>var _hmt = _hmt || [];(function() {var hm = document.createElement(\"script\");\n  hm.src = \"https:\/\/hm.baidu.com\/hm.js?41fc030db57d5570dd22f78997dc4a7e\";\n  var s = document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm, s);})();<\/script>"},"pageInfo":{"title":"\u767e\u5ea6\u7edf\u8ba1","statisticsFunc":"\u767e\u5ea6\u7edf\u8ba1(help\/index)","currentUri":"help%2Findex%3Ffrom%3D2","logoutUri":"\/web\/welcome\/logout","demoUri":"\/web\/demo\/overview\/index?siteId=5503017"},"userInfo":{"roles":[]}}, true);
+</script>
+
+
+    <script src="/webrpt/js/tj_help_center_layout.js?__v=1542181873728" type="text/javascript"></script>
+    <script src="/webrpt/js/tj_help_center.js?__v=1542181873728" type="text/javascript"></script>
+
+</body>
+</html>

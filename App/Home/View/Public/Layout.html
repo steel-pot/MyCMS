@@ -1,2 +1,124 @@
-layout
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>亿博团队—全天实时计划</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="i/style/jh/style.css" />
+    <link rel="stylesheet" type="text/css" href="i/style/font-awesome/css/font-awesome.min.css" />
+    <script src="i/js/moke.js"></script>
+    <script src="i/js/jquery-3.3.1.min.js"></script>
+    <noscript>
+        <div class="noScript">
+            <div>
+                <h2>请开启浏览器的Javascript功能</h2>
+                <p>
+                    亲，没它我们玩不转啊！求您了，开启Javascript吧！<br />
+                    不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！
+                </p>
+            </div>
+        </div>
+    </noscript>
+</head>
+<body>
+    <div style="display: none"><{$GameType}></div>
+
+
+    <!--顶部导航-->
+    <nav class="header navbar navbar-toggleable-sm navbar-inverse container">
+        <a class="navbar-brand" href="/"><img src="<{$config['sitelogo']}>" /></a>
+        <div class="collapse navbar-collapse" id="header">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item"><a class="nav-link" href="jh_cqssc.html">重庆时时彩<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_dfssc.html">大发时时彩<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_bjpk10.html">北京PK10<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_bjk3.html">北京快3<span class="hot"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_dfk3.html">大发快3</a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_jsk3.html">江苏快3</a></li>
+                <li class="nav-item"><a class="nav-link" href="jh_dfpk10.html">大发PK10</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" href="javascript:void(0);" data-toggle="dropdown" id="dropdown">
+                        <i class="fa fa-caret-down text-yellow mr12"></i>更多...
+                    </a>
+                    <div class="dropdown-menu">
+
+                        <a class="dropdown-item" href="jh_shk3.html">上海快3</a>
+                        <a class="dropdown-item" href="jh_ahk3.html">安徽快3</a>
+                        <a class="dropdown-item" href="jh_gxk3.html">广西快3</a>
+                        <a class="dropdown-item" href="jh_hubk3.html">湖北快3</a>
+                        <a class="dropdown-item" href="jh_hebk3.html">河北快3</a>
+                        <a class="dropdown-item" href="jh_gsk3.html">甘肃快3</a>
+                        <a class="dropdown-item" href="jh_gzk3.html">贵州快3</a>
+                        <a class="dropdown-item" href="jh_jlk3.html">吉林快3</a>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!--/顶部导航-->
+
 <{include file=$__template_file}>
+
+
+
+<!--页面底部-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-social">
+                <div class="timer-tokens">
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">7X16小时</span><span class="timer-token_t2">全年无休</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">群体服务</span><span class="timer-token_t2">管理员全程教学</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">网赚领先者</span><span class="timer-token_t2">行业TOP10</span></div>
+                    </div>
+
+                    <div class="timer-token">
+                        <div class="timer-token_desc"><span class="timer-token_t1">9年服务经验</span><span class="timer-token_t2">服务超百万用户</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <p class="footer-copy text-center mb-0">本网站采用无刷新技术，用户无需刷新网页即可实时查看开奖与计划<br />Copyright &copy; 亿博团队—全天实时计划<a href="http://www.66586.cc"><span class="weburl">66586.cc</span></a>all rights reserved </p>
+        </div>
+    </div>
+<!--/页面底部-->
+
+    <script type="text/javascript" src="i/js/jh/open_time.js"></script>
+    <script type="text/javascript" src="i/js/jh/tongji.js"></script>
+    <script type="text/javascript" src="i/js/jh/main.js"></script>
+    <script type="text/javascript">
+        GameType = "<{$GameType}>";
+        $("[href='<{$url}>']").addClass("nav-cur");
+        $(document).ready(function () {
+            StartRun(); 
+        });
+
+        function rbshow(i) {
+            var div6 = document.getElementById('one' + i);
+            if (div6.style.display == "block") {
+                $(".panel" + i).slideUp(300);
+            }
+            else {
+                $(".panel" + i).slideDown(300);
+            }
+        }
+    </script>
+
+
+<div style="display:none">
+<!--统计代码-->
+
+</div>
+</body>
+</html>
