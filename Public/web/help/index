@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="百度移动统计是一款专业免费的移动应用统计分析工具，支持android，ios平台。" />
-    <meta name="keywords" content="百度移动统计;移动应用统计;移动APP统计;Android统计;iOS统计;iphone统计" />
-    <title>百度统计</title>
+    <meta name="description" content="移动统计吧是一款专业免费的移动应用统计分析工具，支持android，ios平台。" />
+    <meta name="keywords" content="移动统计吧;移动应用统计;移动APP统计;Android统计;iOS统计;iphone统计" />
+    <title>统计吧</title>
     <!-- htmlcs-disable max-len, no-meta-css, unique-id, label-for-input, lowercase-class-with-hyphen -->
 <!-- htmlcs-disable max-len, no-meta-css, unique-id -->
 
@@ -84,7 +84,7 @@
 <div class="homepage-header-wrapper">
     <div class="logo">
         <a class="logo-link" href="https://tongji.baidu.com">
-            <img src="/webrpt/images/tj_logo@2x.png?__v=1542181873728" alt="百度统计">
+            <img src="/webrpt/images/tj_logo@2x.png?__v=1542181873728" alt="统计吧">
         </a>
     </div>
     <div class="homepage-header-nav">
@@ -98,10 +98,10 @@
             <a href="#" class="nav-item-label hp-drop-trigger">产品与服务</a>
             <div class="sub-nav ease-in-height  hp-drop-content">
                 <ul>
-                    <li><a href="https://tongji.baidu.com">百度统计-网站统计</a></li>
-                    <li><a href="https://mtj.baidu.com">百度统计-移动统计</a></li>
+                    <li><a href="https://tongji.baidu.com">统计吧-网站统计</a></li>
+                    <li><a href="">统计吧-统计吧</a></li>
                     <li><a href="http://retail.baidu.com">零售解决方案</a></li>
-                    <li><a href="http://datamarket.baidu.com">百度数据市场</a></li>
+                    <li><a href="http://datamarket.baidu.com">移动数据市场</a></li>
                     <li><a href="https://tongji.baidu.com/open/">统计开放平台</a></li>
                     <li><a href="http://tongji.baidu.com/data/">流量研究院</a></li>
                 </ul>
@@ -176,7 +176,7 @@
                         <a href="/web/help/articleList?type=0&category=16" class="operations-guide-tab">代码安装</a>
                         <ul>
                                                                                     <li class="ellipsis">
-                                <a href="/web/help/article?id=174&type=0" title="百度统计代码介绍">百度统计代码介绍</a>
+                                <a href="/web/help/article?id=174&type=0" title="统计吧代码介绍">统计吧代码介绍</a>
                             </li>
                                                         <li class="ellipsis">
                                 <a href="/web/help/article?id=175&type=0" title="如何获取统计代码">如何获取统计代码</a>
@@ -198,7 +198,7 @@
                         <a href="/web/help/articleList?type=0&category=17" class="operations-guide-tab">数据报告</a>
                         <ul>
                                                                                     <li class="ellipsis">
-                                <a href="/web/help/article?id=107&type=0" title="百度统计提供哪些数据报告">百度统计提供哪些数据报告</a>
+                                <a href="/web/help/article?id=107&type=0" title="统计吧提供哪些数据报告">统计吧提供哪些数据报告</a>
                             </li>
                                                         <li class="ellipsis">
                                 <a href="/web/help/article?id=132&type=0" title="如何全方位地解读数据">如何全方位地解读数据</a>
@@ -242,7 +242,7 @@
                         <a href="/web/help/articleList?type=0&category=19" class="operations-guide-tab">账户管理</a>
                         <ul>
                                                                                     <li class="ellipsis">
-                                <a href="/web/help/article?id=173&type=0" title="百度统计账户类型">百度统计账户类型</a>
+                                <a href="/web/help/article?id=173&type=0" title="统计吧账户类型">统计吧账户类型</a>
                             </li>
                                                         <li class="ellipsis">
                                 <a href="/web/help/article?id=180&type=0" title="账户、站点、报告间的关系">账户、站点、报告间的关系</a>
@@ -311,8 +311,8 @@
         <div class="tongji-class-wrapper">
             <ul class="clearfix">
                                                 <li class="l ellipsis ">
-                    <a href="/web/help/article?id=273&type=0" title="">如何区分百度自然、付费搜索来源</a>
-                    <div class="tongji-class-detail">百度统计与百度搜索引擎无缝打通，不仅能够监控全流量的搜索词信息，并且支持用户在无额外...</div>
+                    <a href="/web/help/article?id=273&type=0" title="">如何区分移动自然、付费搜索来源</a>
+                    <div class="tongji-class-detail">统计吧与移动搜索引擎无缝打通，不仅能够监控全流量的搜索词信息，并且支持用户在无额外...</div>
                 </li>
                                 <li class="l ellipsis ">
                     <a href="/web/help/article?id=238&type=0" title="">授权功能——帮您实现多账户整合监控</a>

@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta content="always" name="referrer">
     <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/nocache/imgdata/seErrorRec.js"></script>
-    <title>页面不存在_百度搜索</title>
+    <title>页面不存在_移动搜索</title>
     <style data-for="result">
         body {color: #333; background: #fff; padding: 0; margin: 0; position: relative; min-width: 700px; font-family: arial; font-size: 12px }
         p, form, ol, ul, li, dl, dt, dd, h3 {margin: 0; padding: 0; list-style: none }
@@ -177,7 +177,7 @@
             <div class="head_wrapper">
                 <div class="s_form">
                     <div class="s_form_wrapper">
-                        <a href="//www.baidu.com/" id="result_logo"><img src="//www.baidu.com/img/baidu_jgylogo3.gif" alt="到百度首页" title="到百度首页"></a>
+                        <a href="//www.baidu.com/" id="result_logo"><img src="//www.baidu.com/img/baidu_jgylogo3.gif" alt="到移动首页" title="到移动首页"></a>
                         <form id="form" name="f" action="//www.baidu.com/s" class="fm">
                             <input type="hidden" name="ie" value="utf-8">
                             <input type="hidden" name="f" value="8">
@@ -188,7 +188,7 @@
                             <span class="bg s_ipt_wr iptfocus">
                                 <input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off" autofocus>
                             </span><span class="bg s_btn_wr">
-                                <input type="submit" id="su" value="百度一下" class="bg s_btn">
+                                <input type="submit" id="su" value="移动一下" class="bg s_btn">
                             </span>
                     </form>
                 </div>
@@ -214,7 +214,7 @@
                     <p class="norsTitle2">温馨提示：</p>
                     <ol>
                         <li>请检查您访问的网址是否正确</li>
-                        <li>如果您不能确认访问的网址，请浏览<a href="//www.baidu.com/more/index.html">百度更多</a>页面查看更多网址。</li>
+                        <li>如果您不能确认访问的网址，请浏览<a href="//www.baidu.com/more/index.html">移动更多</a>页面查看更多网址。</li>
                         <li>回到顶部重新发起搜索</li>
                         <li>如有任何意见或建议，请及时<a href="http://qingting.baidu.com/index">反馈给我们</a>。</li>
                     </ol>
@@ -226,7 +226,7 @@
         <span id="help" style="float:left;padding-left:121px">
             <a href="http://help.baidu.com/question" target="_blank">帮助</a>
             <a href="http://www.baidu.com/search/jubao.html" target="_blank">举报</a>
-            <a href="http://jianyi.baidu.com" target="_blank">给百度提建议</a>
+            <a href="http://jianyi.baidu.com" target="_blank">给移动提建议</a>
         </span>
     </div>
 </body>
@@ -255,7 +255,7 @@
                     recommendHtml += '<tr><td><span class="opr-index-item">' + i + '</span><a target="_blank" href="' + itemUrl +'" class="opr-item-text">' + queryArray[i-1].word + '</a></td></tr>';
                 }
             }
-            recommendHtml += '</tbody></table><div class="opr-toplist-info"><span>来源：</span><a target="_blank" href="http://www.baidu.com/link?url=sLR63PtaB7kc3YkTtzDy1k3mbTm1DXDMu-nLcijZx8DmWgOff4lBxqmY-LGDyHqw">百度风云榜</a><span>&nbsp;-&nbsp;</span><a target="_blank" href="http://www.baidu.com/link?url=01vNBVXR2eaJxETl9PI3hcrvKCcwaJIKk5FkpO7l5YI_Q_pC24ogIBoZxI0LAu5oYpAdhRH42nzxAqfui0YnHK">实时热点</a></div></div>';
+            recommendHtml += '</tbody></table><div class="opr-toplist-info"><span>来源：</span><a target="_blank" href="http://www.baidu.com/link?url=sLR63PtaB7kc3YkTtzDy1k3mbTm1DXDMu-nLcijZx8DmWgOff4lBxqmY-LGDyHqw">移动风云榜</a><span>&nbsp;-&nbsp;</span><a target="_blank" href="http://www.baidu.com/link?url=01vNBVXR2eaJxETl9PI3hcrvKCcwaJIKk5FkpO7l5YI_Q_pC24ogIBoZxI0LAu5oYpAdhRH42nzxAqfui0YnHK">实时热点</a></div></div>';
             recommendWrapper.setAttribute('id', 'content_right');
             document.getElementById('wrapper_wrapper').insertBefore(recommendWrapper, document.getElementById('content_left'));
             var recommend = document.getElementById('content_right');
